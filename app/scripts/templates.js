@@ -1,0 +1,1 @@
+angular.module("webcam.templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("views/camera-show.tpl.html","<camera></camera>\n<canvas></canvas>\n");}]);

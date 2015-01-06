@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Webcam</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- build:css css/style.min.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="lib/fontawesome/css/font-awesome.css" />
+  <!-- endbower -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  <!-- endinject -->
+  <!-- endbuild -->
+</head>
+<body ng-app="webcam">
+  <!--[if lt IE 8]>
+    <p class="browsehappy">Estás usando un navegador <strong>desactualizado</strong>. Por favor <a href="http://browsehappy.com/">actualiza tu navegador</a>Para mejorar la experiencia..</p>
+  <![endif]-->
+
+  <section class="center-block" ng-view></section>
+
+  <!-- build:js js/vendor.min.js -->
+  <!-- bower:js -->
+  <script src="lib/jquery/dist/jquery.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="lib/angular-resource/angular-resource.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js js/app.min.js -->
+  <!-- inject:js -->
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/controllers.js"></script>
+  <script src="/scripts/directives.js"></script>
+  <script src="/scripts/services.js"></script>
+  <script src="/scripts/templates.js"></script>
+  <!-- endinject -->
+  <!-- endbuild -->
+</body>
+</html>
