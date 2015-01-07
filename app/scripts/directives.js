@@ -48,7 +48,7 @@
           }, 800);
 
           $scope.$watch('countDown', function(value) {
-            if (value == 0) {
+            if (value === 0) {
               element.addClass('blink_me');
               cameraCtrl.takeSnapshot()
                 .then(function(image) {
@@ -121,8 +121,7 @@
       };
     }).
     directive('cameraCountDown', ['$timeout', function($timeout){
-      return function(scope, element) {
-        var stopTime;
+      return function(scope) {
 
         function updateCountDown() {
           scope.countDown--;
@@ -135,7 +134,7 @@
         }
 
         scope.$watch('showCountDown', function(value) {
-          if (value && scope.countDown == scope.initCountDown) {
+          if (value && scope.countDown === scope.initCountDown) {
             $timeout(updateCountDown, 1000);
           }
         });
