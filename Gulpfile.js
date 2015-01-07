@@ -128,7 +128,7 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('css', function() {
-  gulp.src('./app/stylesheets/main.styl')
+  gulp.src('./app/stylesheets/**/*.styl')
   .pipe(stylus({ use: nib() }))
   .pipe(gulp.dest('./app/stylesheets'));
 });
