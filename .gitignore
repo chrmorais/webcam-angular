@@ -3,6 +3,7 @@ npm-debug.log
 photo.db
 .DS_Store
 app/lib
+app/stylesheets/*.css
 dist
 !webcam/
 webcam/*
