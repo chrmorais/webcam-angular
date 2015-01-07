@@ -23,6 +23,10 @@ db.run('CREATE TABLE if not exists "takePhoto" ("timestamp" INT,"tagID" TEXT,"ta
 router.post('/upload', function (req, res) {
   var base64Data = req.body.image.replace(/^data:image\/png;base64,/, '');
 
+  ensureExists(__dirname + '/webcam', 0744, function(err) {
+    if (err) throw err;
+  });
+
   require('fs').writeFile(path.join(__dirname, 'webcam') + '/'+req.body.tagID+'-'+(Math.floor(new Date().getTime() / 1000))+'.png', base64Data, 'base64', function(err) {
     console.log(err);
   });
@@ -92,6 +96,19 @@ router.get('/checkPhoto', function (req, res) {
 
     });
 });
+
+function ensureExists(path, mask, cb) {
+  if (typeof mask == 'function') { // allow the `mask` parameter to be optional
+    cb = mask;
+    mask = 0777;
+  }
+  require('fs').mkdir(path, mask, function(err) {
+    if (err) {
+        if (err.code == 'EEXIST') cb(null);
+        else cb(err);
+    } else cb(null);
+  });
+}
 
 app.use('/', router);
 
