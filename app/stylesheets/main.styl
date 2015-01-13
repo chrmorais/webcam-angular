@@ -1,5 +1,9 @@
-vendor-prefixes ?= webkit moz official
-b_silver = #ddd
+vendor-prefixes ?= webkit official
+
+$b_silver = #ddd
+$keyframe-name = blinker
+
+@import 'nib'
 
 body
   font-family 'Helvetica'
@@ -40,12 +44,11 @@ canvas
   color #FFF
 
 .blink_me
-  animation-name blinker
+  animation-name $keyframe-name
   animation-duration 1s
   animation-timing-function linear
   animation-iteration-count 1
 
-$keyframe-name = blinker
 @keyframes {$keyframe-name}
   0%
     opacity 1.0
